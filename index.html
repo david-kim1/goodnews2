@@ -6,96 +6,32 @@
     <title>길음한의원 자궁체질 자가문진표와 섭생가이드</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .question-group, .results-container, .guide-container {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            background-color: #f9fafb;
-        }
-        .question-title, .results-title, .guide-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-        .question-item {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-        }
-        .question-item input[type="checkbox"] {
-            margin-right: 0.75rem;
-            width: 1.25rem;
-            height: 1.25rem;
-            border-radius: 0.25rem;
-            border-color: #9ca3af;
-            accent-color: #0d9488;
-        }
-        .question-item label {
-            font-weight: 500;
-            color: #374151;
-            flex-grow: 1;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .question-group, .results-container, .guide-container { margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; background-color: #f9fafb; }
+        .question-title, .results-title, .guide-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937; }
+        .question-item { margin-bottom: 0.75rem; display: flex; align-items: center; }
+        .question-item input[type="checkbox"] { margin-right: 0.75rem; width: 1.25rem; height: 1.25rem; border-radius: 0.25rem; border-color: #9ca3af; accent-color: #0d9488; }
+        .question-item label { font-weight: 500; color: #374151; flex-grow: 1; }
         .score-item { margin-bottom: 0.5rem; }
         .score-value { font-weight: 600; }
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-        }
-        .guide-section {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px dashed #d1d5db;
-            padding-bottom: 1.5rem;
-        }
-        .guide-section:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .guide-section h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0d9488; /* Teal-600 */
-            margin-bottom: 0.5rem;
-        }
-        .guide-section .recommend { color: #10b981; /* Emerald-500 */ }
-        .guide-section .caution { color: #ef4444; /* Red-500 */ }
+        .grid-container { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+        @media (min-width: 768px) { .grid-container { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+        .guide-section { margin-bottom: 1.5rem; border-bottom: 1px dashed #d1d5db; padding-bottom: 1.5rem; }
+        .guide-section:last-child { border-bottom: none; padding-bottom: 0; }
+        .guide-section h4 { font-size: 1.1rem; font-weight: 600; color: #0d9488; margin-bottom: 0.5rem; }
+        .guide-section .recommend { color: #10b981; }
+        .guide-section .caution { color: #ef4444; }
         .guide-section ul { list-style: disc; margin-left: 1.5rem; }
-        .warning {
-            background-color: #fffbeb; /* Amber-50 */
-            border-left: 4px solid #f59e0b; /* Amber-500 */
-            padding: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: #b45309; /* Amber-700 */
-        }
-        .my-constitution {
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: #ecfdf5; /* Emerald-50 */
-            color: #065f46; /* Emerald-800 */
-            border-radius: 0.5rem;
-        }
+        .warning { background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 1rem; margin-bottom: 1rem; font-size: 0.9rem; color: #b45309; }
+        .my-constitution { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; padding: 1rem; background-color: #ecfdf5; color: #065f46; border-radius: 0.5rem; }
+        .input-field { width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; }
     </style>
 </head>
 <body class="bg-gray-100 p-4 md:p-8">
 
     <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6 md:p-8">
         <header class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-teal-600">자궁 건강 & 체질 자가 문진표</h1>
+            <h1 class="text-3xl font-bold text-teal-600">길음한의원 자궁체질 자가문진표</h1>
             <p class="text-gray-600 mt-2">아래 항목 중 현재 해당되는 모든 곳에 ✔ 체크해 주세요.</p>
         </header>
 
@@ -104,7 +40,15 @@
                 <h2 class="question-title">기본 정보</h2>
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">성함:</label>
-                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                    <input type="text" id="name" name="name" class="input-field">
+                </div>
+                <div class="mb-4">
+                    <label for="ageInput" class="block text-sm font-medium text-gray-700 mb-1">나이:</label>
+                    <input type="number" id="ageInput" name="ageInput" class="input-field">
+                </div>
+                <div class="mb-4">
+                    <label for="dateInput" class="block text-sm font-medium text-gray-700 mb-1">검사 날짜:</label>
+                    <input type="date" id="dateInput" name="dateInput" class="input-field">
                 </div>
             </div>
             <div class="question-group">
@@ -112,7 +56,7 @@
                 <div class="grid-container"></div>
             </div>
             <button type="submit" class="w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                결과 및 섭생 가이드 확인하기
+                결과 확인 및 저장하기
             </button>
         </form>
 
@@ -349,7 +293,6 @@
             { id: "s29", text: "29. 맑은 색의 냉(분비물)이 많은 편이다." }, { id: "s30", text: "30. 살이 잘 찌고, 특히 물살이 많다고 느낀다." }
         ];
 
-        // 6가지 패턴 매핑
         const symptomToPattern = {
             s1: ["cold"], s2: ["stasis"], s3: ["heat"], s4: ["deficiency"], s5: ["stagnation"],
             s6: ["deficiency"], s7: ["stasis"], s8: ["cold"], s9: ["heat"], s10: ["deficiency"],
@@ -359,24 +302,16 @@
             s26: ["deficiency"], s27: ["stagnation"], s28: ["heat"], s29: ["damp"], s30: ["damp"]
         };
 
-        // 6가지 패턴 -> 4가지 체질 매핑
         const patternToConstitution = {
-            cold: "guideCold",
-            damp: "guideDamp",
-            deficiency: "guideBlood", // 혈허 -> 혈체질
-            stasis: "guideBlood",     // 어혈 -> 혈체질
-            stagnation: "guideQi",    // 기체 -> 기체질
-            heat: "guideQi"           // 음허/열 -> 기체질 (진액부족/열 포함)
+            cold: "guideCold", damp: "guideDamp", deficiency: "guideBlood", 
+            stasis: "guideBlood", stagnation: "guideQi", heat: "guideQi"
         };
         
         const constitutionNames = {
-            guideCold: "냉체질(冷體質)",
-            guideDamp: "습체질(濕體質)",
-            guideBlood: "혈체질(血體質)",
-            guideQi: "기체질(氣體質)"
+            guideCold: "냉체질(冷體質)", guideDamp: "습체질(濕體質)",
+            guideBlood: "혈체질(血體質)", guideQi: "기체질(氣體質)"
         };
 
-        // 질문 동적 생성
         const symptomGridContainer = document.querySelector('.grid-container');
         symptoms.forEach(symptom => {
             const itemDiv = document.createElement('div');
@@ -388,66 +323,116 @@
             itemDiv.appendChild(checkbox); itemDiv.appendChild(label);
             symptomGridContainer.appendChild(itemDiv);
         });
+        
+        // 가이드 내용 및 결과 컨테이너 참조 (HTML에 해당 ID가 있어야 함)
+        const resultsContainer = document.getElementById('resultsContainer');
+        const guideContainer = document.getElementById('guideContainer');
+        const myConstitutionResult = document.getElementById('myConstitutionResult');
+        const allGuides = document.querySelectorAll('.guide-content');
 
-        // 폼 제출 이벤트 처리
+        // 가이드 HTML 내용을 채우는 코드 (예시 - 실제로는 모든 가이드를 채워야 함)
+        // 이 부분은 HTML에 직접 넣는 것이 더 간단할 수 있습니다. 여기서는 JS로 처리하지 않고
+        // HTML에 미리 존재한다고 가정하고, 보여주기/숨기기만 처리합니다.
+        // (위 HTML 코드 예시에는 가이드 내용이 포함되어 있습니다)
+
         document.getElementById('healthChecklistForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
 
             let patternScores = { cold: 0, deficiency: 0, stagnation: 0, stasis: 0, damp: 0, heat: 0 };
             let constitutionScores = { guideCold: 0, guideDamp: 0, guideBlood: 0, guideQi: 0 };
+            let submissionData = {};
+
+            submissionData.name = document.getElementById('name').value || '';
+            submissionData.age = document.getElementById('ageInput').value || '';
+            submissionData.date = document.getElementById('dateInput').value || '';
+
             let totalChecks = 0;
-
-            const formData = new FormData(event.target);
-            for (let [key, value] of formData.entries()) {
-                if (key === 'name') continue;
-                totalChecks++;
-                if (symptomToPattern[key]) {
-                    symptomToPattern[key].forEach(pattern => {
-                        patternScores[pattern]++;
-                        const constitutionId = patternToConstitution[pattern];
-                        constitutionScores[constitutionId]++;
-                    });
+            symptoms.forEach(symptom => {
+                const isChecked = document.getElementById(symptom.id).checked;
+                submissionData[symptom.id] = isChecked ? 'Y' : 'N'; // Y/N으로 전송
+                if (isChecked) {
+                    totalChecks++;
+                    if (symptomToPattern[symptom.id]) {
+                        symptomToPattern[symptom.id].forEach(pattern => {
+                            patternScores[pattern]++;
+                            const constitutionId = patternToConstitution[pattern];
+                            constitutionScores[constitutionId]++;
+                        });
+                    }
                 }
-            }
-
-            // 패턴 점수 표시
-            document.getElementById('coldPatternScore').innerHTML = `한증 (Cold): <span class="score-value">${patternScores.cold}</span>`;
-            document.getElementById('qiBloodDeficiencyScore').innerHTML = `기혈허약 (Deficiency): <span class="score-value">${patternScores.deficiency}</span>`;
-            document.getElementById('qiStagnationScore').innerHTML = `기체 (Stagnation): <span class="score-value">${patternScores.stagnation}</span>`;
-            document.getElementById('bloodStasisScore').innerHTML = `어혈 (Stasis): <span class="score-value">${patternScores.stasis}</span>`;
-            document.getElementById('dampPhlegmScore').innerHTML = `습담 (Damp): <span class="score-value">${patternScores.damp}</span>`;
-            document.getElementById('yinDeficiencyHeatScore').innerHTML = `음허/열 (Heat): <span class="score-value">${patternScores.heat}</span>`;
-            document.getElementById('resultsContainer').classList.remove('hidden');
-
-            // 모든 가이드 숨기기
-            document.querySelectorAll('.guide-content').forEach(el => el.classList.add('hidden'));
-            document.getElementById('myConstitutionResult').classList.add('hidden');
-
-            // 가장 높은 점수의 체질 찾기
+            });
+            
             let maxScore = 0;
             let primaryConstitutionId = null;
             for (const [id, score] of Object.entries(constitutionScores)) {
-                if (score > maxScore) {
-                    maxScore = score;
-                    primaryConstitutionId = id;
-                }
+                if (score > maxScore) { maxScore = score; primaryConstitutionId = id; }
             }
-            
+            let primaryConstitutionName = (primaryConstitutionId && maxScore > 0) ? constitutionNames[primaryConstitutionId] : '';
+
+            submissionData.coldScore = constitutionScores.guideCold;
+            submissionData.dampScore = constitutionScores.guideDamp;
+            submissionData.bloodScore = constitutionScores.guideBlood;
+            submissionData.qiScore = constitutionScores.guideQi;
+            submissionData.primaryConstitution = primaryConstitutionName;
+
+            // 결과 점수 표시
+            resultsContainer.innerHTML = `
+                <h2 class="results-title">패턴별 점수 결과</h2>
+                <div class="score-item">한증 (Cold): <span class="score-value">${patternScores.cold}</span></div>
+                <div class="score-item">기혈허약 (Deficiency): <span class="score-value">${patternScores.deficiency}</span></div>
+                <div class="score-item">기체 (Stagnation): <span class="score-value">${patternScores.stagnation}</span></div>
+                <div class="score-item">어혈 (Stasis): <span class="score-value">${patternScores.stasis}</span></div>
+                <div class="score-item">습담 (Damp): <span class="score-value">${patternScores.damp}</span></div>
+                <div class="score-item">음허/열 (Heat): <span class="score-value">${patternScores.heat}</span></div>
+            `;
+            resultsContainer.classList.remove('hidden');
+
+            // 모든 가이드 숨기기
+            allGuides.forEach(el => el.classList.add('hidden'));
+            myConstitutionResult.classList.add('hidden');
+
             // 결과 표시
             if (totalChecks === 0) {
-                 document.getElementById('myConstitutionResult').innerHTML = "증상을 선택해주세요.";
-                 document.getElementById('myConstitutionResult').classList.remove('hidden');
-            } else if (primaryConstitutionId && maxScore > 0) { // maxScore > 0 조건 추가: 하나라도 체크되어 점수가 있을 때만
+                 myConstitutionResult.innerHTML = "증상을 선택해주세요.";
+                 myConstitutionResult.classList.remove('hidden');
+            } else if (primaryConstitutionId && maxScore > 0) { 
                 document.getElementById(primaryConstitutionId).classList.remove('hidden');
-                document.getElementById('myConstitutionResult').innerHTML = `나의 주요 체질 경향성은 <span class="text-teal-700">${constitutionNames[primaryConstitutionId]}</span> 입니다.`;
-                document.getElementById('myConstitutionResult').classList.remove('hidden');
-            } else { // 체크는 했지만, 매칭되는 체질 점수가 0인 경우 (이론상 발생하기 어려우나 예외 처리)
-                 document.getElementById('myConstitutionResult').innerHTML = "체질을 판단하기 위한 정보가 부족합니다. 더 많은 증상을 선택하거나 전문가와 상담하세요.";
-                 document.getElementById('myConstitutionResult').classList.remove('hidden');
+                myConstitutionResult.innerHTML = `나의 주요 체질 경향성은 <span class="text-teal-700">${constitutionNames[primaryConstitutionId]}</span> 입니다.`;
+                myConstitutionResult.classList.remove('hidden');
+            } else {
+                 myConstitutionResult.innerHTML = "체질을 판단하기 위한 정보가 부족합니다.";
+                 myConstitutionResult.classList.remove('hidden');
             }
 
-            document.getElementById('guideContainer').classList.remove('hidden');
-            document.getElementById('guideContainer').scrollIntoView({ behavior: 'smooth' });
+            guideContainer.classList.remove('hidden');
+            guideContainer.scrollIntoView({ behavior: 'smooth' });
+
+
+            // *** ✨ Google Apps Script로 데이터 전송 ✨ ***
+            const gasUrl = 'https://script.google.com/macros/s/AKfycbzaz99M4OAdLiJ39D_IkzYsWUDvH3Tlx0aqUc1eN9WxJu1apNrBP5JDbAr_BzfESYf5/exec'; // ◀️◀️◀️ 여기를 꼭 바꾸세요!!!
+
+            if (gasUrl.startsWith('⚠️')) {
+                console.warn("Google Apps Script URL이 설정되지 않아 데이터를 저장하지 않습니다.");
+                alert("결과가 화면에 표시됩니다. (저장 기능은 URL 설정 후 활성화됩니다)");
+                return; 
+            }
+
+            fetch(gasUrl, {
+                method: 'POST',
+                mode: 'no-cors', 
+                cache: 'no-cache',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(submissionData),
+                redirect: 'follow'
+            })
+            .then(() => {
+                console.log("데이터 전송 시도 완료."); 
+                alert('설문 결과가 저장되었습니다!'); 
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('데이터 저장 중 오류가 발생했습니다.');
+            });
         });
     </script>
 </body>
